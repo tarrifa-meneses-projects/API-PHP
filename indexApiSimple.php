@@ -1,6 +1,7 @@
 <?php
 //solo funciona el get y con usuario Cambiar a cedula
 //revisar como colocar autenticacion cookie o token o un tercero
+//nota revision en git con hostpapa
 include 'conexionApiSimple.php';
 
 header('Access-Control-Allow-Origin: *');
