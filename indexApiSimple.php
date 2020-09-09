@@ -16,9 +16,10 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
         $resultado=metodoGet($query);
         echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
     }else{
-        $query="select * from usuarios";
-        $resultado=metodoGet($query);
-        echo json_encode($resultado->fetchAll()); 
+        echo("Cedula no encontrada registrase en el sistema");
+        // $query="select * from usuarios";
+        // $resultado=metodoGet($query);
+        // echo json_encode($resultado->fetchAll()); 
     }
     header("HTTP/1.1 200 OK");
     exit();
