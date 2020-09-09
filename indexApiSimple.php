@@ -12,11 +12,12 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
         $resultado=metodoGet($query);
         $user = 'usuario_id';
         echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
-        $query="select `meSientoMal`,`meSientoBien`,`date`,`usuario_id` from sintomas where usuario_id=$user";
+        $query="select `meSientoMal`,`meSientoBien`,`date`,`usuario_id` from sintomas where usuario_id = '$user'";
         $resultado=metodoGet($query);
         echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
     }else{
         echo("Cedula no encontrada registrase en el sistema");
+        echo $user;
         // $query="select * from usuarios";
         // $resultado=metodoGet($query);
         // echo json_encode($resultado->fetchAll()); 
