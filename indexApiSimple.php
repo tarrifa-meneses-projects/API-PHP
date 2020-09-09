@@ -7,7 +7,7 @@ include 'conexionApiSimple.php';
 header('Access-Control-Allow-Origin: *');
 
 if($_SERVER['REQUEST_METHOD']=='GET'){
-    if(isset($_GET['usuario_id'])){
+    if(isset($_GET['usuario_documento'])){
         $query="select * from usuarios where usuario_documento=".$_GET['usuario_documento'];
         $resultado=metodoGet($query);
         echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
