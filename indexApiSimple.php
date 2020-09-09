@@ -10,8 +10,9 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
     if(isset($_GET['usuario_documento'])){
         $query="select `usuario_nombre`,`usuario_apellido`,`usuario_id`,`usuario_documento` from usuarios where usuario_documento=".$_GET['usuario_documento'];
         $resultado=metodoGet($query);
+        $user = 'usuario_id';
         echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
-        $query="select `meSientoMal`,`meSientoBien`,`date`,`usuario_id` from sintomas where usuario_id='usuario_id'";
+        $query="select `meSientoMal`,`meSientoBien`,`date`,`usuario_id` from sintomas where usuario_id=$user";
         $resultado=metodoGet($query);
         echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
     }else{
