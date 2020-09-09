@@ -1,4 +1,5 @@
 <?php
+//modulo inicial de conexion
 $pdo=null;
 $host="localhost";
 $user="usoftwax_covid19DemoAdmin";
