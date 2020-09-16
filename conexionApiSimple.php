@@ -1,5 +1,5 @@
 <?php
-//modulo inicial de conexion
+//modulo inicial de conexion ahora en docker funcionando
 $pdo=null;
 $host="localhost";
 $user="usoftwax_covid19DemoAdmin";
