@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
         
         echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
         $res = json_encode($resultado->fetch(PDO::FETCH_ASSOC));
-        echo $res;
+        echo "esta variable es".$res;
         
     }else{
         echo("Cedula no encontrada registrase en el sistema");
