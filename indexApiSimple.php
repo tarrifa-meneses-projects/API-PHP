@@ -11,8 +11,8 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
         $query="select `usuario_nombre`,`usuario_apellido`,`usuario_id`,`usuario_documento` from usuarios where usuario_documento=".$_GET['usuario_documento'];
         $resultado=metodoGet($query);
         $fila=($resultado->fetch(PDO::FETCH_ASSOC));
-        echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
-        
+        //echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
+        echo json_encode($fila);
         $usuario=$fila['usuario_id'];
 
         $query="SELECT * FROM `sintomas` WHERE `usuario_id` = $usuario";
