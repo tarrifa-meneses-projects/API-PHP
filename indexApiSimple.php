@@ -10,12 +10,16 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
     if(isset($_GET['usuario_documento'])){
         $query="select `usuario_nombre`,`usuario_apellido`,`usuario_id`,`usuario_documento` from usuarios where usuario_documento=".$_GET['usuario_documento'];
         $resultado=metodoGet($query);
-        
+        $fila=($resultado->fetch(PDO::FETCH_ASSOC));
         echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
-        $res = json_encode($resultado->fetch(PDO::FETCH_ASSOC));
-        echo "esta variable es".$res;
-        print_r($resultado['usuario_nombre']);
         
+        $usuario=$fila['usuario_id'];
+
+        $query="SELECT * FROM `sintomas` WHERE `usuario_id` = $usuario";
+        $resultado2=metodoGet($query);
+        $fila2=($resultado2->fetch(PDO::FETCH_ASSOC));
+        echo json_encode($fila2);
+
     }else{
         echo("Cedula no encontrada registrase en el sistema");
        
